@@ -1,0 +1,324 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background-color: #101010;
+}
+
+.inner_header{
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo_container{
+    height: 100%;
+    display: table;
+    float: left;
+}
+
+.la-cube{
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.logo_container h1{
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Montserrat';
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.logo_container h1 a{
+    color: #fff;
+}
+
+.logo_container h1 span{
+    font-weight: 800;
+    color: #fff;
+}
+
+.logo_container a:hover{
+    color: #ffa500;
+    transition: 300ms;
+}
+
+.logo_container span:hover{
+    color: #ffa500;
+    transition: 300ms;
+}
+
+.logo_container h1:hover{
+    color: #ffa500;
+    transition: 300ms;
+}
+
+.la-cube:hover{
+    color: #ffa500;
+    transition: 300ms;
+}
+
+.navigation {
+    float: right;
+    height: 100%;
+}
+
+.navigation a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+}
+
+.navigation a:last-child{
+    padding-right: 0;
+}
+
+.navigation a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+}
+
+.navigation a li:hover{
+    color: #ffa500;
+    transition: 300ms;
+}
+
+/* main */ 
+
+:root{
+    --heading: 'Montserrat', sans-serif;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background: #fff;
+}
+
+.abo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cardAbo {
+    line-height: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.cardAbo img{
+    width:50%;
+    
+}
+  
+.cardAbo:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+.containerAbo {
+    padding: 2px 16px;
+}
+
+.containerAbo button{
+    width: 200px;
+    height: 50px;
+    background-color:  #ffa500;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    border: 0;
+    margin: 2rem 2rem 2rem 2rem;
+}
+
+.containerAbo button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+/* main */
+
+
+.main-container{
+    padding: 30px 10px;
+}
+
+.main-container > h2{
+    padding: 15px 0 15px 30px;
+}
+
+.main-container article{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 15px 0;
+    border-bottom: 1px solid #7ac64d;
+}
+
+.main-container article:last-child{
+    border-bottom: none;
+}
+
+.main-container img{
+    width: auto;
+    align-self: center;
+}
+
+.main-container h4{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+    align-self: center;
+}
+
+.main-container article h2{
+    font-size: 18px;
+    padding: 10px 0;
+    font-family: var(--heading);
+}
+
+.main-container article p{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.main-container article div{
+    margin-right: 10px;
+}
+
+/* Contact */
+
+.mainCont{
+    margin: 50px 250px 50px 250px;
+}
+
+.contbox{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #f1f2f6;
+    box-shadow: 0px 0px 10px 0px #9c9c9c;
+}
+
+.contmap{
+    width: 100%;
+    height: auto;
+    flex: 50%;
+}
+
+.contmap iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.contform{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.contform input, textarea {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:665px){
+    .contform{
+        padding: 30px !important;
+    }
+}
+
+.contform h1{
+    margin-bottom: 10px;
+}
+
+.formtxt{
+    width: 100%;
+    height: 40px;
+    color: #0A0708;
+    border: 1px solid #9c9c9c;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.formtxt::placeholder{
+    color: #747474;
+}
+
+.formtxtarea{
+    resize: none;
+    width: 100%;
+    color: #0A0708;
+    border: 1px solid #9c9c9c;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+}
+
+.formtxtarea::placeholder{
+    color: #747474;
+}
+
+.formbtn{
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: orange;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+.formbtn:hover{
+    background: #9c9c9c;
+}
+
+.formbtn:active{
+    color: #0A0708;
+}
+
+/* footer */
+
+footer {
+    height: 100%;
+    text-align: center;
+    background-color: #101010;
+    padding: 100px 100px;
+    color: #fff;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+}
+
+.inner_header span{
+    text-align: center;
+    vertical-align: middle;
+}

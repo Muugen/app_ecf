@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>Admin Dashbord</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/formLogin.css">
+</head>
+<body>
+
+    
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="sidebar">
+
+        <div class="brand">
+            <span class="las la-cube"></span>
+            <h2>Le Cube</h2>
+        </div>
+        <div class="sidemenu">
+
+            <div class="side-user">
+            <div><a href=""><img src="./assets/images/imgProfile/photo_pro.png" alt="" class="side-img"></a></div>
+                <div class="user">
+                    <small>Anthony HUYNH</small>
+                    <p>Web developper</p>
+                </div>
+            </div>
+    
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="las la-home"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="las la-newspaper"></span>
+                        <span>Articles</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="las la-archive"></span>
+                        <span>Categorie</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="las la-id-card"></span>
+                        <span>Grade utilisateur</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="las la-newspaper"></span>
+                        <span>Liste des utilisateur</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="las la-calendar"></span>
+                        <span>Calendrier</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <label for="menu-toggle" class="menu-toggler">
+                <span class="las la-bars"></span>
+            </label>
+            <div class="head-icons">
+                <span class="las la-bell"></span>
+                <span class="las la-bookmark"></span>
+                <span class="las la-comment"></span>
+            </div>
+        </header>
+
+        <main>
+            
+            <div class="table-title">
+                <h3>Liste des utilisateurs</h3>
+            </div>
+            <table class="table-fill">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Image profile</th>
+                        <th class="text-center">Nom</th>
+                        <th class="text-center">Prenom</th>
+                        <th class="text-center">login</th>
+                        <th class="text-center">email</th>
+                        <th class="text-center">Grade</th>
+                        <?php if($_SESSION['Auth']->id_g == 1){ ?>
+                        <th class="text-center">Actions</th>
+                        <th class="text-center">Supprimer</th>
+                        <?php } ?>
+                    </tr>
+                </thead>
+                
+                <tbody class="table-hover">
+                    <?php foreach ($allUsers as  $user) { ?>
+                    <tr>
+                        <td><?=$user->getId();?></td>
+                        <td><img src="./assets/imgProfile/<?=$car->getImage_profile();?>" alt="" width="100"></td>
+                        <td><?=$user->getNom();?></td>
+                        <td><?=$user->getPrenom();?></td>
+                        <td><?=$user->getLogin();?></td>
+                        <td><?=$user->getEmail();?></td>
+                        <td><?=$user->getGrade()->getNom_g();?></td>
+
+                        <?php if($_SESSION['Auth']->id_g == 1){ ?>
+                        <td class="text-center">
+                        <?php
+                            echo($user->getStatut())
+                            ? "<a href='index.php?action=list_u&id=".$user->getId()."&statut=".$user->getStatut()."'  onclick='return confirm(`Etes-vous sûr de vouloir désactiver...`)' class='btn btn-success'><i class='las la-unlock'> Désactiver</i></a>"
+                            : "<a href='index.php?action=list_u&id=".$user->getId()."&statut=".$user->getStatut()."' onclick='return confirm(`Etes-vous sûr de vouloir activer...`)' class='btn btn-danger'><i class='las la-lock'> Activer</i></a>"
+                        ?>
+                        </td>
+                        
+                        <td class="text-center">
+                            <a href="index.php?action=delete_cat&id=<?=$cat->getId_cat();?>" onclick="return confirm('Etes vous sûr de vouloir supprimer cette categorie')">
+                                <i class="las la-trash-alt"></i>
+                            </a>
+                        </td>
+                        <?php } ?>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <label class="close-mobile-menu" for="menu-toggle"></label>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
+
